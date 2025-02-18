@@ -1,1 +1,4 @@
 .webui_secret_key
+.continue/sessions/*
+.continue/index/*
+.continue/dev_data/*
