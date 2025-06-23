@@ -1,5 +1,6 @@
-install-ollama:
-	curl -fsSL https://ollama.com/install.sh | sh
+install-ollama: set-models-dir
+	# curl -fsSL https://ollama.com/install.sh | sh
+	brew install ollama
 
 install-open-webui:
 	pip install open-webui
@@ -12,7 +13,7 @@ ollama-serve:
 ollama-stop:
 	systemctl stop ollama.service
 
-ollama-update-models:
+update-models:
 	./ollama-update-models.sh
 	ollama list
 
@@ -21,3 +22,6 @@ open-webui-serve:
 
 open-webui-stop:
 	pkill -f open-webui
+
+set-models-dir:
+	echo "export OLLAMA_MODELS=/Users/shared/ollama/models" >> ~/.zshrc
